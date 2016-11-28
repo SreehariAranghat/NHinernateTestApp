@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="NHinernateTestApp"
+                   assembly="NHinernateTestApp">
+  <class name ="User" table="Users" lazy="false">
+    <cache usage="read-write"/>
+    <id name="Id" column="UserId">
+      <generator class ="native"></generator>
+    </id>
+    <property name="Name" not-null="true" length="50" />
+    <property name="Email" column="EmailAddress" not-null="true" length="50" />
+    <property name="Type" column="UserType" not-null="true" />
+  </class>
+</hibernate-mapping>
